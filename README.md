@@ -21,4 +21,7 @@ Installation
     ln -s ../../lib/editable_fragments/test/tc_editable_fragment.php test/models/
     ln -s ../../lib/editable_fragments/test/tc_editable_fragment_history.php test/models/
 
+Copy migration to a proper filename into your project:
+
+    cp lib/editable_fragments/db/migrations/0144_editable_fragments.sql db/migrations/
 
