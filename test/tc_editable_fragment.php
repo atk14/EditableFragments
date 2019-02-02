@@ -1,5 +1,5 @@
 <?php
-class TcEditableFramgment extends TcBase {
+class TcEditableFragment extends TcBase {
 
 	function test_NormalizeKey(){
 		global $ATK14_GLOBAL;
