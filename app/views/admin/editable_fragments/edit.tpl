@@ -1,8 +1,9 @@
 <h1>{$page_title}</h1>
 
 <ul>
-	<li>{t}Umístění{/t}: {$editable_fragment->getContentSection()}</li>
 	<li>{t}Klíč{/t}: {$editable_fragment->getKey()}</li>
+	<li>{t}Umístění{/t}: {$editable_fragment->getContentSection()}</li>
+	<li>{t}Jazyk{/t}: {!$editable_fragment->getLang()|h|default:"&mdash;"}</li>
 </ul>
 
 {render partial="shared/form"}

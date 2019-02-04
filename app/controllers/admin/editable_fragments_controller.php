@@ -22,6 +22,7 @@ class EditableFragmentsController extends AdminController{
 		$edit_record_title = _("Editovat záznam");
 		switch($c_type){
 			case "title":
+			case "string":
 				$this->form->add_field("content",new CharField(array(
 					"label" => _("Obsah"),
 					"initial" => $ef->getContent(),
@@ -61,6 +62,10 @@ class EditableFragmentsController extends AdminController{
 				throw new Exception("Unknown content type: ".$ef->getContentType());
 		}
 		$this->form->add_comment_field(); // chceme, aby byl komentar jako posledni pole
+
+		if($has_iobjects && !class_exists("Iobject")){
+			$has_iobjects = false;
+		}
 
 		$this->tpl_data["has_iobjects"] = $has_iobjects;
 		$this->tpl_data["create_new_record_url"] = $create_new_record_url;

@@ -71,7 +71,11 @@ function smarty_block_editable($params,$content,$template,&$repeat){
 	if($logged_user){
 		$url = Atk14Url::BuildLink(array("namespace" => "admin", "controller" => "editable_fragments", "action" => "edit", "id" => $fragment));
 		$tag = "span";
-		$button = "<a href=\"$url\" class=\"editable-edit-link\"><i class=\"icon ion-edit\"></i><span class=\"editable-edit-link-text\"> editovat</span></a>";
+		$icon = '<i class="icon ion-edit"></i>';
+		if(defined("USING_FONTAWESOME") && USING_FONTAWESOME){
+			$icon = '<i class="fas fa-pencil-alt"></i>';
+		}
+		$button = "<a href=\"$url\" class=\"editable-edit-link\">$icon<span class=\"editable-edit-link-text\"> editovat</span></a>";
 
 		if(trim($output)==""){
 			$output = "<i>"._("Zde je prostor pro volně editovatelný obsah...")."</i>";
