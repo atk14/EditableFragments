@@ -86,7 +86,7 @@ function smarty_block_editable($params,$content,$template,&$repeat){
 			$tag = "div";
 		}
 
-		$output = "<$tag class=\"editable\" data-edit-url=\"$url\">$button$output</$tag>";
+		$output = "<$tag class=\"editable\" data-edit-url=\"$url\">$button\n$output\n</$tag>";
 	}
 
 
