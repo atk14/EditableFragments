@@ -23,18 +23,24 @@ function smarty_block_editable_markdown($params,$content,$template,&$repeat){
 	$content = trim($content);
 	$content = smarty_block_editable($params,$content,$template,$repeat);
 
-	$opening_tag = $closing_tag = "";
+	// see app/helpers/block.editable.php
+	if(preg_match('/^<(span|div) class="editable"/',$content)){
+		$ary = explode("\n",$content);
+		$first_line = array_shift($ary);
+		$last_line = array_pop($ary);
+		$content = join("\n",$ary);
 
-	if(preg_match('/^(<.*?>)(.*)(<.*?>)$/s',$content,$matches)){
-		$opening_tag = $matches[1];
-		$closing_tag = $matches[3];
-		$content = $matches[2];
+		$first_line = str_replace('<span ','<div ',$first_line);
+		$last_line = str_replace('</span>','</div>',$last_line);
+
+		$first_line = "$first_line\n";
+		$last_line = "\n$last_line";
+	}else{
+		$first_line = "";
+		$last_line = "";
 	}
 
 	$content = smarty_block_markdown(array(),$content,$template,$repeat);
 
-	$opening_tag = preg_replace('/<span/','<div',$opening_tag);
-	$closing_tag = preg_replace('/<\/span/','</div',$closing_tag);
-
-	return "$opening_tag$content$closing_tag";
+	return "$first_line$content$last_line";
 }

@@ -37,8 +37,9 @@ Installation
     ln -s ../../lib/editable_fragments/app/helpers/block.editable_string.php app/helpers/
     ln -s ../../lib/editable_fragments/app/models/editable_fragment.php app/models/
     ln -s ../../lib/editable_fragments/app/models/editable_fragment_history.php app/models/
-    ln -s ../../lib/editable_fragments/test/tc_editable_fragment.php test/models/
-    ln -s ../../lib/editable_fragments/test/tc_editable_fragment_history.php test/models/
+    ln -s ../../lib/editable_fragments/test/models/tc_editable_fragment.php test/models/
+    ln -s ../../lib/editable_fragments/test/models/tc_editable_fragment_history.php test/models/
+    ln -s ../../lib/editable_fragments/test/helpers/tc_editable_markdown.php test/helpers/
 
 Copy migration to a proper filename into your project:
 
@@ -53,3 +54,5 @@ Linking a proper style form either for Bootstrap 3 (less) or Bootstrap 4 (scss).
     ln -s ../../lib/editable_fragments/public/styles/_editable_fragments.scss public/styles/
 
 Now include the selected style to your application style.
+
+[//]: # ( vim: set ts=2 et: )

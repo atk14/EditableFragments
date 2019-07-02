@@ -42,6 +42,8 @@ class EditableFragment extends ApplicationModel{
 			return $content_section;
 		}
 
+		$namespace = $ATK14_GLOBAL->getValue("namespace");
+
 		return $namespace ? DEFAULT_EDITABLE_CONTENT_SECTION."/$namespace" : DEFAULT_EDITABLE_CONTENT_SECTION; // "content/blog", "content"
 	}
 
