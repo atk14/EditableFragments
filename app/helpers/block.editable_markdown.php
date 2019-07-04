@@ -30,7 +30,7 @@ function smarty_block_editable_markdown($params,$content,$template,&$repeat){
 		$last_line = array_pop($ary);
 		$content = join("\n",$ary);
 
-		$first_line = str_replace('<span ','<div ',$first_line);
+		$first_line = preg_replace('/^<span /','<div ',$first_line);
 		$last_line = str_replace('</span>','</div>',$last_line);
 
 		$first_line = "$first_line\n";
