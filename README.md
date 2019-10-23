@@ -1,6 +1,31 @@
 Editable Fragments
 ------------------
 
+Usage
+=====
+
+In a template:
+
+    {* file: app/views/main/index.tpl *}
+
+    {editable key="about_us"}
+    <p>We are who we are!</p>
+    <p>We are here because we are here!</p>
+    {/editable}
+
+By default, editable content is being edited in the textarea (as the DEFAULT_EDITABLE_CONTENT_TYPE is set as "text").
+
+Other ways of usage:
+
+    {editable_string key="about_us/title"}About Us{/editable_string}
+
+    {editable_markdown key="about_us"}
+    * We are who we are!
+    * We are here because we are here!
+    {/editable_markdown}
+
+    {editable_render partial="person_info" person=$person key="vip_person"}
+
 Prerequisites
 =============
 
@@ -49,7 +74,7 @@ Linking a proper style form either for Bootstrap 3 (less) or Bootstrap 4 (scss).
 
     ln -s ../../lib/editable_fragments/public/styles/editable_fragments.less public/styles/
 
-    or
+    # or
 
     ln -s ../../lib/editable_fragments/public/styles/_editable_fragments.scss public/styles/
 
