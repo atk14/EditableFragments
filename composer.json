@@ -1,0 +1,21 @@
+{
+        "name": "atk14/editable-fragments",
+        "type": "library",
+        "description": "A set of features that allow editing (typically textual) components on a webpage",
+        "keywords": [],
+        "homepage": "https://github.com/atk14/EditableFragments",
+        "license": ["MIT"],
+        "authors": [
+                {
+                        "name": "ATK14 Development Team",
+                        "homepage": "https://github.com/orgs/atk14/people"
+                }
+        ],
+        "require": {
+                "php": ">=5.4.0"
+        },
+        "require-dev": {
+        },
+        "autoload": {
+        }
+}
