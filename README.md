@@ -82,13 +82,13 @@ Copy migration to a proper filename into your project:
 
     cp vendor/atk14/editable-fragments/src/db/migrations/0144_editable_fragments.sql db/migrations/
 
-Linking a proper style form either for Bootstrap 3 (less) or Bootstrap 4 (scss).
+Linking a proper style form either for  or Bootstrap 4 (scss) or Bootstrap 3 (less).
 
-    ln -s ../../vendor/atk14/editable-fragments/src/public/styles/editable_fragments.less public/styles/
-
-    # or
-
+    # Bootstrap 4
     ln -s ../../vendor/atk14/editable-fragments/src/public/styles/_editable_fragments.scss public/styles/
+
+    # or Bootstrap 3
+    ln -s ../../vendor/atk14/editable-fragments/src/public/styles/editable_fragments.less public/styles/
 
 Now include the selected style to your application style.
 
