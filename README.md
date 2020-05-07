@@ -78,9 +78,10 @@ Installation
     ln -s ../../vendor/atk14/editable-fragments/src/test/models/tc_editable_fragment_history.php test/models/
     ln -s ../../vendor/atk14/editable-fragments/src/test/helpers/tc_editable_markdown.php test/helpers/
 
-Copy migration to a proper filename into your project:
+Copy migration to a proper filename into your project and perform the migration script:
 
     cp vendor/atk14/editable-fragments/src/db/migrations/0144_editable_fragments.sql db/migrations/
+    ./scripts/migrate
 
 Linking a proper style form either for  or Bootstrap 4 (scss) or Bootstrap 3 (less).
 
