@@ -9,7 +9,7 @@
 		opacity: 0.92;
 		position: absolute;
 		padding: 0.2rem 0.5rem;
-		background-color: @brand-blue-medium;
+		background-color: @brand-info;
 		color: white;
 		left: 0;
 		top: -1.4rem;
@@ -26,11 +26,11 @@
 }
 div.editable:hover {
 	//box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
-	//border: 2px dashed @brand-blue-medium;
+	//border: 2px dashed @brand-info;
 }
 .editable:hover {
 	/* Tento vnitrni stin neni dobry na spanech, ktere jsou pres vice radku */
-	//border: 2px dashed @brand-blue-medium;
+	//border: 2px dashed @brand-info;
 	// border davame na before element, aby nam tloustka borderu nehybala s layoutem
 	&:before {
 		position: absolute;
@@ -40,7 +40,7 @@ div.editable:hover {
 		top: 0;
 		width: 100%;
 		height: 100%;
-		border: 2px dashed @brand-blue-medium;
+		border: 2px dashed @brand-info;
 	}
 	a.editable-edit-link {
 		.editable-edit-link-text {
