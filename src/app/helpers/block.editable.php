@@ -83,7 +83,7 @@ function smarty_block_editable($params,$content,$template,&$repeat){
 		$button = "<span class=\"editable-edit-link\" onclick=\"javascript: window.location = '".h($url)."'; return false;\">$icon<span class=\"editable-edit-link-text\"> $title</span></span>";
 		
 		// pokud jsou v obsahu blokove tagy, tak to obalime divem
-		if(preg_match('/<(p|div|ul|ol|table|dd|form|address|pre|video|blockquote|fieldset|h[1-9]|hr|article)(|\s[^>]*)>/',$output)){
+		if(preg_match('/<(p|div|ul|ol|table|dd|form|address|pre|video|blockquote|fieldset|h[1-9]|hr|article)(|\s[^>]*)>/i',$output)){
 			$tag = "div";
 		}
 
