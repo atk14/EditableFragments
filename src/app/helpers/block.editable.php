@@ -36,6 +36,8 @@ function smarty_block_editable($params,$content,$template,&$repeat){
 		"type" => "text", // e.g. "text", "markdown", "title", "Person", "Article"
 		"key" => DEFAULT_EDITABLE_KEY, // e.g. "page_description", "notice", "promo", "company_data", "/company_data"
 		"content_section" => $smarty->getTemplateVars("current_content_section"), // "content", "content/blog"
+
+		"edit_title" => _("editovat"),
 	);
 
 	$lang = null;
@@ -69,17 +71,16 @@ function smarty_block_editable($params,$content,$template,&$repeat){
 	$output = $fragment->getContent();
 
 	if($logged_user){
-		$url = Atk14Url::BuildLink(array("namespace" => "admin", "controller" => "editable_fragments", "action" => "edit", "id" => $fragment));
-		$tag = "span";
-		$icon = '<i class="icon ion-edit"></i>';
-		if(defined("USING_FONTAWESOME") && USING_FONTAWESOME){
-			$icon = '<i class="fas fa-pencil-alt"></i>';
-		}
-		$button = "<a href=\"$url\" class=\"editable-edit-link\">$icon<span class=\"editable-edit-link-text\"> editovat</span></a>";
-
 		if(trim($output)==""){
 			$output = "<i>"._("Zde je prostor pro volně editovatelný obsah...")."</i>";
 		}
+		$url = Atk14Url::BuildLink(array("namespace" => "admin", "controller" => "editable_fragments", "action" => "edit", "id" => $fragment));
+		$tag = "span";
+		$icon_class = defined("USING_FONTAWESOME") && USING_FONTAWESOME ? "fas fa-pencil-alt" : "icon ion-edit";
+		$icon = "<i class=\"$icon_class\"></i>";
+		$title = h($params["edit_title"]);
+		//$button = "<a href=\"$url\" class=\"editable-edit-link\">$icon<span class=\"editable-edit-link-text\"> $title</span></a>";
+		$button = "<span class=\"editable-edit-link\" onclick=\"javascript: window.location = '".h($url)."'; return false;\">$icon<span class=\"editable-edit-link-text\"> $title</span></span>";
 		
 		// pokud jsou v obsahu blokove tagy, tak to obalime divem
 		if(preg_match('/<(p|div|ul|ol|table|dd|form|address|pre|video|blockquote|fieldset|h[1-9]|hr|article)(|\s[^>]*)>/',$output)){
