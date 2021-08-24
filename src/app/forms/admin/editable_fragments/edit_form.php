@@ -13,4 +13,14 @@ class EditForm extends AdminForm{
 			"initial" => "",
 		)));
 	}
+
+	function clean(){
+		list($err,$d) = parent::clean();
+
+		if(!$this->has_errors()){
+			$d["content"] = (string)$d["content"];
+		}
+
+		return array($err,$d);
+	}
 }

@@ -26,14 +26,12 @@ class EditableFragmentsController extends AdminController{
 				$this->form->add_field("content",new CharField(array(
 					"label" => _("Obsah"),
 					"initial" => $ef->getContent(),
-					"null_empty_output" => false,
 				)));
 				break;
 			case "text":
 				$this->form->add_field("content",new TextField(array(
 					"label" => _("Obsah"),
 					"initial" => $ef->getContent(),
-					"null_empty_output" => false,
 					"required" => false,
 				)));
 				break;
@@ -52,7 +50,13 @@ class EditableFragmentsController extends AdminController{
 				$this->form->add_field("content",new MarkdownField(array(
 					"label" => _("Obsah"),
 					"initial" => $ef->getContent(),
-					"null_empty_output" => false,
+					"required" => false,
+				)));
+				break;
+			case "pupiq_image":
+				$this->form->add_field("content", new PupiqImageField(array(
+					"label" => _("Obrázek"),
+					"initial" => $ef->getContent(),
 					"required" => false,
 				)));
 				break;

@@ -72,6 +72,7 @@ Installation
     ln -s ../../vendor/atk14/editable-fragments/src/app/helpers/block.editable_page_title.php app/helpers/
     ln -s ../../vendor/atk14/editable-fragments/src/app/helpers/function.editable_render.php app/helpers/
     ln -s ../../vendor/atk14/editable-fragments/src/app/helpers/block.editable_string.php app/helpers/
+    ln -s ../../vendor/atk14/editable-fragments/src/app/helpers/block.editable_pupiq_image.php app/helpers/
     ln -s ../../vendor/atk14/editable-fragments/src/app/models/editable_fragment.php app/models/
     ln -s ../../vendor/atk14/editable-fragments/src/app/models/editable_fragment_history.php app/models/
     ln -s ../../vendor/atk14/editable-fragments/src/test/models/tc_editable_fragment.php test/models/
