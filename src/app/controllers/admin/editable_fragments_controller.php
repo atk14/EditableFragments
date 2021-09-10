@@ -20,43 +20,52 @@ class EditableFragmentsController extends AdminController{
 		$create_new_record_url = $edit_record_url = "";
 		$create_new_record_title = _("Vytvořit nový záznam");
 		$edit_record_title = _("Editovat záznam");
+
+		$initial = $ef->getContent();
+		if($this->params->getString("load_initial_content")){
+			$initial = $ef->getInitialContent();
+		}
+		if(!is_null($hist_id = $this->params->getInt("load_history_id")) && ($ef_history = EditableFragmentHistory::FindFirst("editable_fragment_id",$ef,"id",$hist_id))){
+			$initial = $ef_history->getContent();
+		}
+
 		switch($c_type){
 			case "title":
 			case "string":
 				$this->form->add_field("content",new CharField(array(
 					"label" => _("Obsah"),
-					"initial" => $ef->getContent(),
+					"initial" => $initial,
 				)));
 				break;
 			case "text":
 				$this->form->add_field("content",new TextField(array(
 					"label" => _("Obsah"),
-					"initial" => $ef->getContent(),
+					"initial" => $initial,
 					"required" => false,
 				)));
 				break;
 			case "Person":
 					$this->form->add_field("content",new PersonField(array(
 						"label" => _("Vyberte osobu"),
-						"initial" => $ef->getContent(),
+						"initial" => $initial,
 					)));
 					$create_new_record_url = $this->_link_to("people/create_new");
 					$create_new_record_title = _("Založit novou osobu");
-					$edit_record_url = $this->_link_to(array("action" => "people/edit", "id" => $ef->getContent()));
+					$edit_record_url = $this->_link_to(array("action" => "people/edit", "id" => $initial));
 					$edit_record_title = _("Editovat vybranou osobu");
 					break;
 			case "markdown":
 				$has_iobjects = true;
 				$this->form->add_field("content",new MarkdownField(array(
 					"label" => _("Obsah"),
-					"initial" => $ef->getContent(),
+					"initial" => $initial,
 					"required" => false,
 				)));
 				break;
 			case "pupiq_image":
 				$this->form->add_field("content", new PupiqImageField(array(
 					"label" => _("Obrázek"),
-					"initial" => $ef->getContent(),
+					"initial" => $initial,
 					"required" => false,
 				)));
 				break;
@@ -78,6 +87,7 @@ class EditableFragmentsController extends AdminController{
 		$this->tpl_data["edit_record_title"] = $edit_record_title;
 
 		$this->_save_return_uri();
+		$this->tpl_data["return_uri"] = $this->_get_return_uri();
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 
