@@ -32,37 +32,7 @@
 	</div>
 	<div  class="col-sm-4">
 
-		{assign history_items EditableFragmentHistory::FindAll("editable_fragment_id",$editable_fragment,["order_by" => "created_at DESC, id DESC"])}
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th colspan="3">{t}Revize{/t}</th>
-				</tr>
-			</thead>
-			<tbody>
-				{foreach $history_items as $history_item}
-					<tr>
-						<td{if $history_item->getComment()} style="padding-bottom: 0px;"{/if}>
-							<a href="{link_to action="edit" id=$editable_fragment load_history_id=$history_item->getId() return_uri=$return_uri}">{$history_item->getCreatedAt()|format_datetime}</a>
-						</td>
-						<td{if $history_item->getComment()} style="padding-bottom: 0px;"{/if}>
-							{$history_item->getCreatedByUser()|default:$mdash}
-						</td>
-					</tr>
-					{if $history_item->getComment()}
-						<tr>
-							<td colspan="2" style="border-top: none; padding-top: 0px;">
-								<small><em>{$history_item->getComment()}</em></small>
-							</td>
-						</tr>
-					{/if}
-				{/foreach}
-				<tr>
-					<td colspan="2"><a href="{link_to action="edit" id=$editable_fragment load_initial_content=1 return_uri=$return_uri}">zobrazit původní obsah</a></td>
-				</tr>
-			</tbody>
-		</table>
+		{render partial="sidebar"}
 
 	</div>
 

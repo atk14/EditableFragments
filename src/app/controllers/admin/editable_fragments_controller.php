@@ -24,9 +24,11 @@ class EditableFragmentsController extends AdminController{
 		$initial = $ef->getContent();
 		if($this->params->getString("load_initial_content")){
 			$initial = $ef->getInitialContent();
+			$this->tpl_data["loaded_initial_content"] = true;
 		}
 		if(!is_null($hist_id = $this->params->getInt("load_history_id")) && ($ef_history = EditableFragmentHistory::FindFirst("editable_fragment_id",$ef,"id",$hist_id))){
 			$initial = $ef_history->getContent();
+			$this->tpl_data["loaded_history_id"] = $ef_history->getId();
 		}
 
 		switch($c_type){
