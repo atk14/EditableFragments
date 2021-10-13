@@ -2,6 +2,11 @@
 
 All notable changes to EditableFragments will be documented in this file.
 
+## [1.1.1] - 2021-10-13
+
+- Added method EditableFragmentHistory::getCreatedByUser()
+- A string or a title value is not required
+
 ## [1.1] - 2021-09-22
 
 - Added editable_pupiq_image
