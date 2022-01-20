@@ -2,6 +2,10 @@
 
 All notable changes to EditableFragments will be documented in this file.
 
+## [1.1.2] - 2022-01-20
+
+- Small fix - a message was not marked for gettext
+
 ## [1.1.1] - 2021-10-13
 
 - Added method EditableFragmentHistory::getCreatedByUser()
