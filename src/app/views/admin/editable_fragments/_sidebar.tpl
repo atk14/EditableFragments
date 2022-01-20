@@ -30,7 +30,7 @@
 			{/if}
 		{/foreach}
 		<tr{if $loaded_initial_content} style="font-weight: bold;"{/if}>
-			<td colspan="2"><a href="{link_to action="edit" id=$editable_fragment load_initial_content=1 return_uri=$return_uri}">zobrazit původní obsah</a></td>
+			<td colspan="2"><a href="{link_to action="edit" id=$editable_fragment load_initial_content=1 return_uri=$return_uri}">{t}zobrazit původní obsah{/t}</a></td>
 		</tr>
 	</tbody>
 </table>
