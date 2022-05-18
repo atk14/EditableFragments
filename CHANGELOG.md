@@ -2,6 +2,10 @@
 
 All notable changes to EditableFragments will be documented in this file.
 
+## [1.1.3] - 2022-05-18
+
+* 87860d8 - Empty test fixed - at least one assertion must be made
+
 ## [1.1.2] - 2022-01-20
 
 - Small fix - a message was not marked for gettext
