@@ -2,6 +2,10 @@
 
 All notable changes to EditableFragments will be documented in this file.
 
+## [1.1.4] - 2022-09-03
+
+* 645c66d - Helper editable_pupiq_image can be used for a <picture>...</picture>
+
 ## [1.1.3] - 2022-05-18
 
 * 87860d8 - Empty test fixed - at least one assertion must be made
