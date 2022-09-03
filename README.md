@@ -37,6 +37,21 @@ Other ways of usage:
       </a>
     {/editable_link_content}
 
+Images:
+
+    {editable_pupiq_image geometry="400x300"}
+      <img src="http://i.pupiq.net/i/77/77/083/31083/600x500/5ucyEH_600x500_c834ac5ca651b903.png" class="img-fluid">
+    {/editable_pupiq_image}
+
+    {* or *}
+                                                                                                                              
+    {editable_pupiq_image geometry="400x300"}
+      <picture>
+        <source srcset="http://i.pupiq.net/i/77/77/083/31083/600x500/5ucyEH_600x500_c834ac5ca651b903.webp" type="image/webp">
+        <img src="http://i.pupiq.net/i/77/77/083/31083/600x500/5ucyEH_600x500_c834ac5ca651b903.png" class="img-fluid">
+      </picture>
+    {/editable_pupiq_image}
+
 Prerequisites
 =============
 
