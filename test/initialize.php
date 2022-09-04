@@ -13,6 +13,8 @@ define("TEMP",__DIR__ . "/tmp/");
 define("ATK14_NON_SSL_PORT",80);
 define("ATK14_SSL_PORT",443);
 
+define("PUPIQ_API_KEY","101.DemoApiKeyForAccountWithLimitedFunctions");
+
 require(__DIR__ . "/../vendor/smarty/smarty/libs/Smarty.class.php");
 require(__DIR__ . "/../vendor/smarty/smarty/libs/SmartyBC.class.php");
 require(__DIR__ . "/../vendor/atk14/core/src/atk14_smarty_base_v3.php");
@@ -26,6 +28,7 @@ require(__DIR__ . "/../src/app/models/editable_fragment.php");
 require(__DIR__ . "/../src/app/models/editable_fragment_history.php");
 
 $HTTP_REQUEST = new HTTPRequest();
+$HTTP_RESPONSE = new HTTPResponse();
 
 $dbmole = PgMole::GetInstance("default");
 
@@ -43,6 +46,8 @@ DROP TABLE IF EXISTS editable_fragments;
 DROP SEQUENCE IF EXISTS seq_editable_fragments;
 DROP TABLE IF EXISTS users;
 DROP SEQUENCE IF EXISTS seq_users;
+DROP TABLE IF EXISTS translations;
+DROP SEQUENCE IF EXISTS seq_translations;
 ");
 $dbmole->doQuery("
 CREATE SEQUENCE seq_users START WITH 11;
@@ -68,6 +73,23 @@ CREATE TABLE users(
 
 INSERT INTO users (id,login,password,firstname,lastname,is_admin) VALUES(1,'admin','!to_be_replaced_by_a_hashed_password!','Charlie','Root','t');
 ");
+$dbmole->doQuery("
+CREATE SEQUENCE seq_translations;
+CREATE TABLE translations (
+	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_translations'),
+	table_name VARCHAR(255) NOT NULL, -- products, cards, articles...
+	record_id INT NOT NULL,
+	key VARCHAR(255) NOT NULL, -- title, body....
+	lang CHAR(2) NOT NULL, -- en, cs, sk...
+	body TEXT,
+	--
+	created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+	updated_at TIMESTAMP,
+	--
+	CONSTRAINT unq_translations UNIQUE(table_name,record_id,key,lang)
+);
+");
+
 $dbmole->doQuery(file_get_contents(__DIR__."/../src/db/migrations/0144_editable_fragments.sql"));
 
 $ATK14_GLOBAL = new Atk14Global();
