@@ -39,13 +39,13 @@ Other ways of usage:
 
 Images:
 
-    {editable_pupiq_image geometry="400x300"}
+    {editable_pupiq_image key="image_about_us" geometry="400x300"}
       <img src="http://i.pupiq.net/i/77/77/083/31083/600x500/5ucyEH_600x500_c834ac5ca651b903.png" class="img-fluid">
     {/editable_pupiq_image}
 
     {* or *}
                                                                                                                               
-    {editable_pupiq_image geometry="400x300"}
+    {editable_pupiq_image key="image_about_us" geometry="400x300"}
       <picture>
         <source srcset="http://i.pupiq.net/i/77/77/083/31083/600x500/5ucyEH_600x500_c834ac5ca651b903.webp" type="image/webp">
         <img src="http://i.pupiq.net/i/77/77/083/31083/600x500/5ucyEH_600x500_c834ac5ca651b903.png" class="img-fluid">
@@ -90,9 +90,6 @@ Installation
     ln -s ../../vendor/atk14/editable-fragments/src/app/helpers/block.editable_pupiq_image.php app/helpers/
     ln -s ../../vendor/atk14/editable-fragments/src/app/models/editable_fragment.php app/models/
     ln -s ../../vendor/atk14/editable-fragments/src/app/models/editable_fragment_history.php app/models/
-    ln -s ../../vendor/atk14/editable-fragments/src/test/models/tc_editable_fragment.php test/models/
-    ln -s ../../vendor/atk14/editable-fragments/src/test/models/tc_editable_fragment_history.php test/models/
-    ln -s ../../vendor/atk14/editable-fragments/src/test/helpers/tc_editable_markdown.php test/helpers/
 
 Copy migration to a proper filename into your project and perform the migration script:
 
