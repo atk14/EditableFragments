@@ -1,6 +1,8 @@
 <?php
 class EditableFragmentsController extends AdminController{
 
+	var $editable_fragment;
+
 	function _before_filter(){
 		$this->_find("editable_fragment");
 	}
