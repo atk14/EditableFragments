@@ -2,6 +2,10 @@
 
 All notable changes to EditableFragments will be documented in this file.
 
+## [1.1.5] - 2024-07-18
+
+* 62b6d68 - [PHP8.3] EditableFragmentsController::$editable_fragment declaration
+
 ## [1.1.4] - 2022-09-03
 
 * 645c66d - Helper editable_pupiq_image can be used for a <picture>...</picture>
