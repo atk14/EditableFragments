@@ -20,7 +20,7 @@
                 "atk14/files": "^1.6.2",
                 "atk14/table-record": "^1.1.2",
                 "atk14/class-autoload": "^1.0",
-                "atk14/tester": "^0.4",
+                "atk14/tester": "^0.5",
                 "atk14/stop-watch": "^0.1",
                 "atk14/drink-markdown": "^0.8.4",
                 "atk14/http": "^0.8",

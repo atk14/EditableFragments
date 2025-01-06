@@ -19,7 +19,7 @@ class TcEditableMarkdown extends TcBase {
 		$smarty->assign("logged_user",$admin);
 
 		$output = smarty_block_editable_markdown(["key" => "testing"],$src,$smarty,$repeat);
-		$this->assertContains($exp,$output);
+		$this->assertStringContains($exp,$output);
 		$this->assertTrue(!!preg_match('/^<div class="editable"/',$output));
 		$this->assertTrue(!!preg_match('/<\/div>$/',$output));
 	}
