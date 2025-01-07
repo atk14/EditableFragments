@@ -3,7 +3,7 @@ Editable Fragments
 
 A set of features that allow editing (typically textual) components on a webpage.
 
-Editable Fragments is designed for applications built on Atk14Skelet.
+Editable Fragments is designed for applications built on [ATK14 Framework](https://www.atk14.net/).
 
 Usage
 =====
