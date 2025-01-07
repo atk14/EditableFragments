@@ -2,6 +2,10 @@
 
 All notable changes to EditableFragments will be documented in this file.
 
+## [1.1.6] - 2025-01-07
+
+* 42d4a94 - Test fixed
+
 ## [1.1.5] - 2024-07-18
 
 * 62b6d68 - [PHP8.3] EditableFragmentsController::$editable_fragment declaration
