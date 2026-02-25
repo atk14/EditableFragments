@@ -91,6 +91,9 @@ class EditableFragmentsController extends AdminController{
 		$this->tpl_data["edit_record_url"] = $edit_record_url;
 		$this->tpl_data["edit_record_title"] = $edit_record_title;
 
+		$this->tpl_data["icon_plus"] = EditableFragmentsUtils::RenderIcon("plus");
+		$this->tpl_data["icon_edit"] = EditableFragmentsUtils::RenderIcon("edit");
+
 		$this->_save_return_uri();
 		$this->tpl_data["return_uri"] = $this->_get_return_uri();
 

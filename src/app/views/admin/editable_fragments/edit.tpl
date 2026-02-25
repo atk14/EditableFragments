@@ -16,11 +16,11 @@
 			<hr>
 			<ul>
 				{if $create_new_record_url}
-				<li><a href="{$create_new_record_url}">{!"plus"|icon} {$create_new_record_title}</a></li>
+				<li><a href="{$create_new_record_url}">{!$icon_plus} {$create_new_record_title}</a></li>
 				{/if}
 
 				{if $edit_record_url}
-				<li><a href="{$edit_record_url}">{!"edit"|icon}{$edit_record_title}</a></li>
+				<li><a href="{$edit_record_url}">{!$icon_edit}{$edit_record_title}</a></li>
 				{/if}
 			</ul>
 		{/if}

@@ -76,8 +76,7 @@ function smarty_block_editable($params,$content,$template,&$repeat){
 		}
 		$url = Atk14Url::BuildLink(array("namespace" => "admin", "controller" => "editable_fragments", "action" => "edit", "id" => $fragment));
 		$tag = "span";
-		Atk14Require::Helper("modifier.icon");
-		$icon = smarty_modifier_icon(USING_FONTAWESOME ? "pencil" : "edit");
+		$icon = EditableFragmentsUtils::RenderIcon(defined("USING_FONTAWESOME") && constant("USING_FONTAWESOME") ? "pencil" : "edit");
 		$title = h($params["edit_title"]);
 		//$button = "<a href=\"$url\" class=\"editable-edit-link\">$icon<span class=\"editable-edit-link-text\"> $title</span></a>";
 		$button = "<span class=\"editable-edit-link\" onclick=\"javascript: window.location = '".h($url)."'; return false;\">$icon<span class=\"editable-edit-link-text\"> $title</span></span>";

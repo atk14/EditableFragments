@@ -29,5 +29,6 @@
                 "atk14/pupiq-client": "^1.14.4"
         },
         "autoload": {
+                "classmap": ["src/lib"]
         }
 }
