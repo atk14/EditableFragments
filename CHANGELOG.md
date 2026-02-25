@@ -2,6 +2,10 @@
 
 All notable changes to EditableFragments will be documented in this file.
 
+## [1.1.7] - 2026-02-25
+
+* Icons are rendered using the helper icon if it's available
+
 ## [1.1.6] - 2025-01-07
 
 * 42d4a94 - Test fixed
