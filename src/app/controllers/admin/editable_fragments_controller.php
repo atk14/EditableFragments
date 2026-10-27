@@ -49,6 +49,13 @@ class EditableFragmentsController extends AdminController{
 					"required" => false,
 				)));
 				break;
+			case "html":
+				$this->form->add_field("content",new TextField(array(
+					"label" => _("Obsah (HTML)"),
+					"initial" => $initial,
+					"required" => false,
+				)));
+				break;
 			case "Person":
 					$this->form->add_field("content",new PersonField(array(
 						"label" => _("Vyberte osobu"),
