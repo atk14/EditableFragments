@@ -2,6 +2,10 @@
 
 All notable changes to EditableFragments will be documented in this file.
 
+## [1.1.8] - 2026-10-27
+
+* Basic support for HTML content type
+
 ## [1.1.7] - 2026-02-25
 
 * Icons are rendered using the helper icon if it's available
